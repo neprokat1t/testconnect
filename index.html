@@ -34,22 +34,32 @@
 </head>
 <body>
 
-<script>
-    function connectWallet() {
+<script> //ПОДКЛЮЧЕНИЕ ММ
+ function connectWallet() {
         if (typeof window.ethereum !== 'undefined') {
-            // Кошелек пользователя доступен
+            // Кошелек доступен
             ethereum.request({ method: 'eth_requestAccounts' })
                 .then((accounts) => {
                     const selectedAddress = accounts[0];
-                    alert(`Connected to wallet with address: ${selectedAddress}`);
+                    alert(`Подключен к кошельку с адресом: ${selectedAddress}`);
+                    // Включите кнопку "Отключить кошелек" после подключения
+                    document.getElementById('disconnect-wallet-button').disabled = false;
                 })
                 .catch((error) => {
                     console.error(error);
                 });
         } else {
-            // Кошелек не найден или не доступен
-            console.error('Wallet not found or not accessible');
+            // Кошелек не найден или недоступен
+            console.error('Кошелек не найден или недоступен');
         }
+    } 
+    //ОТКЛЮЧЕНИЕ ММ
+    function disconnectWallet() {
+        // Реализуйте здесь вашу логику отключения кошелька
+        // Например, вы можете очистить сохраненные данные кошелька или выполнить другие необходимые действия
+        alert('Кошелек отключен');
+        // Отключите кнопку "Отключить кошелек" после выполнения отключения
+        document.getElementById('disconnect-wallet-button').disabled = true;
     }
 </script>
 
@@ -64,6 +74,8 @@
 </nav>
 
 <button id="connect-wallet-button" class="connect-button" onclick="connectWallet()">Connect Wallet</button>
+
+<button id="disconnect-wallet-button" class="connect-button" onclick="disconnectWallet()" disabled>Отключить кошелек</button>
 
 <h1>Миша хуй</h1>
 <p>хуй хуй хуй</p>
