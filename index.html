@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>test</title>
+
+
+    <style>
+        /* Стили для элементов страницы */
+        body {
+            background-color: #00000023; /* Укажите цвет фона в формате HEX или названии цвета */
+        }
+  
+        /* Стили для навигационной строки */
+        nav {
+            background-color: #000000; /* Цвет фона навигационной строки */
+            color: #000000; /* Цвет текста */
+            padding: 20px; /* Отступы вокруг навигационной строки */
+        }
+
+        /* Стили для кнопок навигации */
+        .nav-button {
+            background-color: #000000; /* Цвет фона кнопок */
+            color: #05a7a7; /* Цвет текста кнопок */
+            padding: 5px 10px; /* Отступы внутри кнопок */
+            margin-right: 25px; /* Отступ между кнопками */
+            text-decoration: none; /* Убираем подчеркивание у ссылок */
+        }
+        .connect-button {
+            background-color: #008CBA; /* Цвет фона кнопки */
+            color: #fff; /* Цвет текста кнопки */
+            padding: 10px 20px; /* Отступы внутри кнопки */
+            border: none; /* Убираем границу кнопки */
+            cursor: pointer; /* Изменяем курсор при наведении на кнопку */
+        }
+    </style>
+    
+</head>
+<body>
+
+    <script>
+        function connectWallet() {
+            if (typeof window.ethereum !== 'undefined') {
+                // Кошелек пользователя доступен
+                ethereum.request({ method: 'eth_requestAccounts' })
+                    .then((accounts) => {
+                        const selectedAddress = accounts[0];
+                        alert(`Connected to wallet with address: ${selectedAddress}`);
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            } else {
+                // Кошелек не найден или не доступен
+                console.error('Wallet not found or not accessible');
+            }
+        }
+    </script>
+    
+
+    <nav>
+        <a href="home.html" class="nav-button">Home</a>
+        <a href="#" class="nav-button">About us</a>
+        <a href="#" class="nav-button">NFT</a>
+        <a href="#" class="nav-button">Support</a>
+        <a href="#" class="nav-button">test</a>
+        <a href="#" class="nav-button">Контакты2</a>
+        <a href="#" class="nav-button">Контакты3</a>
+    </nav>
+    
+    <button id="connect-wallet-button">Connect Wallet</button>
+
+
+    <h1>Миша хуй</h1>
+    <p>хуй хуй хуй</p>
+     
+    <p>Хуй хуй Миша хуй</p>
+    <img src="images/2.jpg" alt="Описание изображения">
+
+  
+
+    <button onclick="alert('Вы нажали на кнопку 1!')">Кнопка 1</button>
+
+    <button onclick="alert('Вы нажали на кнопку 2!')">Кнопка 2</button>
+    <button onclick="alert('Вы нажали на кнопку 3!')">Кнопка 3</button>
+
+    <script>
+        function connectWallet() {
+            // Ваш JavaScript-код для подключения кошелька (например, вызов MetaMask API) здесь
+            alert("Кошелек подключен!");
+        }
+    </script>
+</body>
+</html>
