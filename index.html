@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <title>test</title>
-
-
     <style>
         /* Стили для элементов страницы */
         body {
@@ -34,61 +31,49 @@
             cursor: pointer; /* Изменяем курсор при наведении на кнопку */
         }
     </style>
-    
 </head>
 <body>
 
-    <script>
-        function connectWallet() {
-            if (typeof window.ethereum !== 'undefined') {
-                // Кошелек пользователя доступен
-                ethereum.request({ method: 'eth_requestAccounts' })
-                    .then((accounts) => {
-                        const selectedAddress = accounts[0];
-                        alert(`Connected to wallet with address: ${selectedAddress}`);
-                    })
-                    .catch((error) => {
-                        console.error(error);
-                    });
-            } else {
-                // Кошелек не найден или не доступен
-                console.error('Wallet not found or not accessible');
-            }
+<script>
+    function connectWallet() {
+        if (typeof window.ethereum !== 'undefined') {
+            // Кошелек пользователя доступен
+            ethereum.request({ method: 'eth_requestAccounts' })
+                .then((accounts) => {
+                    const selectedAddress = accounts[0];
+                    alert(`Connected to wallet with address: ${selectedAddress}`);
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        } else {
+            // Кошелек не найден или не доступен
+            console.error('Wallet not found or not accessible');
         }
-    </script>
-    
+    }
+</script>
 
-    <nav>
-        <a href="home.html" class="nav-button">Home</a>
-        <a href="#" class="nav-button">About us</a>
-        <a href="#" class="nav-button">NFT</a>
-        <a href="#" class="nav-button">Support</a>
-        <a href="#" class="nav-button">test</a>
-        <a href="#" class="nav-button">Контакты2</a>
-        <a href="#" class="nav-button">Контакты3</a>
-    </nav>
-    
-    <button id="connect-wallet-button">Connect Wallet</button>
+<nav>
+    <a href="home.html" class="nav-button">Home</a>
+    <a href="#" class="nav-button">About us</a>
+    <a href="#" class="nav-button">NFT</a>
+    <a href="#" class="nav-button">Support</a>
+    <a href="#" class="nav-button">test</a>
+    <a href="#" class="nav-button">Контакты2</a>
+    <a href="#" class="nav-button">Контакты3</a>
+</nav>
 
+<button id="connect-wallet-button" class="connect-button" onclick="connectWallet()">Connect Wallet</button>
 
-    <h1>Миша хуй</h1>
-    <p>хуй хуй хуй</p>
-     
-    <p>Хуй хуй Миша хуй</p>
-    <img src="images/2.jpg" alt="Описание изображения">
+<h1>Миша хуй</h1>
+<p>хуй хуй хуй</p>
+ 
+<p>Хуй хуй Миша хуй</p>
+<img src="images/2.jpg" alt="Описание изображения">
 
-  
+<button onclick="alert('Вы нажали на кнопку 1!')">Кнопка 1</button>
+<button onclick="alert('Вы нажали на кнопку 2!')">Кнопка 2</button>
+<button onclick="alert('Вы нажали на кнопку 3!')">Кнопка 3</button>
 
-    <button onclick="alert('Вы нажали на кнопку 1!')">Кнопка 1</button>
-
-    <button onclick="alert('Вы нажали на кнопку 2!')">Кнопка 2</button>
-    <button onclick="alert('Вы нажали на кнопку 3!')">Кнопка 3</button>
-
-    <script>
-        function connectWallet() {
-            // Ваш JavaScript-код для подключения кошелька (например, вызов MetaMask API) здесь
-            alert("Кошелек подключен!");
-        }
-    </script>
 </body>
 </html>
